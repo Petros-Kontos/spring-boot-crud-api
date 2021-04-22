@@ -45,6 +45,7 @@ public class EmployeeController {
         return theEmployee;
     }
 
+    @PutMapping("/employees/{employeeId}")
     public Employee updateEmployee(@RequestBody Employee theEmployee) {
 
         employeeService.save(theEmployee);
@@ -52,6 +53,7 @@ public class EmployeeController {
         return theEmployee;
     }
 
+    @DeleteMapping("/employees/{employeeId}")
     public String deleteEmployee(@PathVariable int employeeId) {
 
         Employee tempEmployee = employeeService.findById(employeeId);
@@ -62,6 +64,6 @@ public class EmployeeController {
 
         employeeService.deleteById(employeeId);
 
-        return "Delelted employee with id " + employeeId;
+        return "Deleted employee with id " + employeeId;
     }
 }
