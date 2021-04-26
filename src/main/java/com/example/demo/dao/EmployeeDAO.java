@@ -1,5 +1,6 @@
-package com.example.demo;
+package com.example.demo.dao;
 
+import com.example.demo.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;

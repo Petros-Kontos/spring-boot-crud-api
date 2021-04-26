@@ -1,5 +1,7 @@
-package com.example.demo;
+package com.example.demo.service;
 
+import com.example.demo.dao.EmployeeDAO;
+import com.example.demo.entity.Employee;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
