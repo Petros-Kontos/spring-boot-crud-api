@@ -20,12 +20,14 @@ public class Employee {
     @Column(name="email")
     private String email;
 
-    public Employee() {
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "payment_details_id")
+    private PaymentDetails paymentDetails;
 
+    public Employee() {
     }
 
-    public Employee(int id, String first_name, String last_name, String email) {
-        this.id = id;
+    public Employee(String first_name, String last_name, String email) {
         this.firstName = first_name;
         this.lastName = last_name;
         this.email = email;
@@ -63,6 +65,14 @@ public class Employee {
         this.email = email;
     }
 
+    public PaymentDetails getPaymentDetails() {
+        return paymentDetails;
+    }
+
+    public void setPaymentDetails(PaymentDetails paymentDetails) {
+        this.paymentDetails = paymentDetails;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
@@ -70,6 +80,7 @@ public class Employee {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
+                ", paymentDetails=" + paymentDetails +
                 '}';
     }
 }
