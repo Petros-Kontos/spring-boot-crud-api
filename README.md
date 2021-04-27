@@ -11,5 +11,3 @@ Paycheck (one to many) <br />
 Payment Details (one to one) <br />
 Company Discount (many to many) <br />
 
-
-# spring-boot-crud-api 
